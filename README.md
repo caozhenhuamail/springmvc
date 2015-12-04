@@ -1,4 +1,4 @@
-# springmvc
+springmvc
 
 #版本信息
 #junit.version>4.11
