@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springapp.mvc.mapper.ItemsMapper">
+
+    <!-- 根据主键查询商品信息 -->
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.springapp.mvc.po.Items">
+        select *
+        from items
+        where id = #{id}
+    </select>
+
+    <!-- 根据主键更新商品信息 -->
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.springapp.mvc.po.ItemsCustom">
+        update items
+        <set>
+            <if test="name != null">
+                items.name = #{name},
+            </if>
+            <if test="price != null">
+                items.price= #{price},
+            </if>
+            <if test="description != null">
+                items.description = #{description},
+            </if>
+            <if test="createTime != null">
+                items.createTime = #{createTime}
+            </if>
+
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteItems" >
+        DELETE FROM items where id in
+        <foreach collection="array" item="itemId" index="index" open="(" close=")" separator=",">
+            #{itemId}
+        </foreach>
+    </delete>
+    
+</mapper>
