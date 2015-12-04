@@ -1,20 +1,22 @@
 package com.springapp.mvc.service.impl;
 
 
-import com.springapp.mvc.mapper.ItemsMapper;
 import com.springapp.mvc.mapper.ItemsCustomMapper;
+import com.springapp.mvc.mapper.ItemsMapper;
 import com.springapp.mvc.po.Items;
 import com.springapp.mvc.po.ItemsCustom;
 import com.springapp.mvc.po.ItemsQueryVo;
 import com.springapp.mvc.service.ItemsService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by richard on 15-12-1.
  */
+@Service("ItemsService")
 public class ItemsServiceImpl implements ItemsService {
 
     /**

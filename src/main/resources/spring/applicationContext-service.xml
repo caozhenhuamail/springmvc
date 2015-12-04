@@ -25,6 +25,6 @@
         <context:component-scan base-package="cn.blog.cao"/>
         这个包下的所有 @Repository, @Service 和 @Controller注解都会被自动扫描后进行注册.
     -->
-    <bean id="itemsService" class="com.springapp.mvc.service.impl.ItemsServiceImpl"/>
+    <!--<bean id="itemsService" class="com.springapp.mvc.service.impl.ItemsServiceImpl"/>-->
 
 </beans>
